@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block title %}Sign up{% endblock title %}
+{% block content %}
+{{ super() }}
+<form action='/signup' method="POST">
+    <div class="text-center">
+        <div style="margin-top: 3.2em">
+        <label class="fw-light" for='user_name'>Username: </label><input id="user_name" placeholder="Think of a username" type="text" required name="user_name" class="forms">
+        </div>
+        <div class="margin_up_low">
+            <label class="fw-light" for='pass'>Password: </label><input id="pass" placeholder="Think of a password" type="password" required maxlength="15" name="password" class="forms">
+        </div >
+        <div class="margin_up_low">
+            <button type="reset" value="reset data" class="buttons-main btn btn-outline-danger">Reset</button>
+        </div>
+        <div class="margin_up_low">
+            <button type="submit" value="submit data" class="buttons-main btn btn-outline-success">Submit</button>
+        </div>
+    </div>
+</form>
+{% endblock content %}

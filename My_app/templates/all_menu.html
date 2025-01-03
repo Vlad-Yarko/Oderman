@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% block title %}
+Menu
+{% endblock title %}
+{% block content %}
+<h1 class="text-center fw-light">Pizza</h1>
+<table class="bg-warning" cellpadding="5">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price $</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for pizza in menu_piz %}
+            <tr>
+                <td>{{ pizza.title }}</td>
+                <td>{{ pizza.description }}</td>
+                <td>{{ pizza.price }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<h1 class="text-center margin_up_high  fw-light">Beverages</h1>
+<table class="bg-info" cellpadding="5">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price $</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for beverage in menu_bev %}
+            <tr>
+                <td>{{ beverage.title }}</td>
+                <td>{{ beverage.description }}</td>
+                <td>{{ beverage.price }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

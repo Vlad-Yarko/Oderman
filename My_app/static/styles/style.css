@@ -1,0 +1,44 @@
+.flash.error {
+    background-color: red;
+}
+.flash.success {
+    background-color: green;
+}
+
+.margin_down_low {
+    margin-bottom: 0.6em;
+}
+
+.margin_image {
+    margin-top: 3.2em;
+    margin-bottom: 0.6em;
+    width: 50%;
+    border-radius: 10%;
+}
+
+.image_navbar {
+    border-radius: 10%;
+    width: 5%;
+}
+
+button {
+    width: 40%;
+}
+
+.margin_up_low {
+    margin-top: 0.8em;
+}
+
+.forms {
+    width: 35%;
+}
+
+.margin_up_high {
+    margin-top: 1.5em;
+}
+
+table {
+    border: 2px red solid;
+    margin: auto;
+    width: 50%;
+}
