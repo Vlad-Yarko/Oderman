@@ -1,0 +1,8 @@
+{% extends 'account_t/layout.html' %}
+{% block title %}My profile{% endblock title %}
+{% block content %}
+{{ super() }}
+<img src="{{ url_for('accounts.static', filename='images/' + image) }}">
+<h1>{{ username }}</h1>
+<a href="/account/profile/update_image?mode={{ request.args.get('mode') }}"><button>Update profile photo</button></a>
+{% endblock content %}

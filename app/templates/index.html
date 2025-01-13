@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+{{ super() }}
+<div class="text-center">
+  <img class="margin_image" src="{{ url_for('restaurant.static', filename='images/main_pizza.png') }}">
+    <h1 class="margin_down_low" style>Fayna Pizza Vid Ruclanchika</h1>
+    <h1 class="margin_down_low fw-light">Hello <span class="margin_down_low fw-light text-warning">{{ user }}</span></h1>
+    <div class="text-center margin_up_low">
+      <a href="/restaurant/menu?mode={{ request.args.get('mode') }}"><button class="buttons-main btn btn-outline-danger">MENU</button></a>
+    </div>
+    <div class="text-center">
+      <a href="/restaurant/menu/pizza?mode={{ request.args.get('mode') }}"><button class="buttons-main btn btn-outline-warning">Pizza</button></a>
+    </div>
+    <div class="text-center">
+      <a href="/restaurant/menu/beverages?mode={{ request.args.get('mode') }}"><button class="buttons-main btn btn-outline-info">Beverages</button></a>
+    </div>
+    <div class="text-center">
+        <a href="/account/profile?mode={{ request.args.get('mode') }}"><button class="buttons-main btn btn-outline-info">Profile</button></a>
+      </div>
+  </div>
+{% endblock content %}

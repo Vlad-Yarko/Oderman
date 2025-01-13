@@ -1,0 +1,13 @@
+{% extends 'account_t/layout.html' %}
+{% block title %}Update image{% endblock title %}
+{% block content %}
+{{ super() }}
+<form action="/account/profile/update_image?mode={{ request.args.get('mode') }}" enctype="multipart/form-data" method="POST">
+    <div>
+        <input type="file" name="file">
+    </div>
+    <div>
+        <input type="submit" value="Upload">
+    </div>
+</form>
+{% endblock content %}

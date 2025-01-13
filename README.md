@@ -10,7 +10,14 @@ pip freeze requirements.txt
 # To start application, you need open terminal in your IDE or other way and be on your root directory.
 So, after you did all requirements above, you need to write this command to start application:
 ```commandline
-hypercorn main:asgi_app
+hypercorn app.main:a
 ```
+or
+```commandline
+uvicorn app.main:a
+```
+also you can just run main file in you IDE!
+
+### Also, I wanted to add here docker compose, but I didn't
 
 # So, good luck!

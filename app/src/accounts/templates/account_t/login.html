@@ -1,0 +1,37 @@
+{% extends 'account_t/layout.html' %}
+{% block title %}Log in{% endblock title %}
+{% block content %}
+{{ super() }}
+<form action='/account/login?mode={{ request.args.get("mode") }}' method="POST">
+    {{ form.hidden_tag() }}
+    <div class="text-center">
+        <div class="margin_up_low">
+        {% for field in form if field.name not in ['submit', 'reset', 'csrf_token', 'remember_me'] %}
+        <div class="margin_up_low">
+            {{ field.label(class="fw-light") }}
+            {% if field.errors %}
+                {{ field(style='background-color: red', class='forms') }}
+                {% for error in field.errors %}
+                    <span style="color: red">
+                        {{ error }}
+                    </span>
+                {% endfor %}
+            {% else %}
+                {{ field(class='forms') }}
+            {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+        <div>
+            {{ form.remember_me.label() }}
+            {{ form.remember_me() }}
+        </div>
+        <div class="margin_up_low">
+            <button type="reset" value="reset data" class="buttons-main btn btn-outline-danger">Reset</button>
+        </div>
+        <div class="margin_up_low">
+            {{ form.submit(class="buttons-main btn btn-outline-success") }}
+        </div>
+    </div>
+</form>
+{% endblock content %}
